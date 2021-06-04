@@ -24,5 +24,7 @@ class BST_Construction(unittest.TestCase):
 
         self.assertTrue(root.contains(15))
 
+        self.assertEqual(root.validateBST(root), True)
+
 if __name__ == '__main__':
     unittest.main()

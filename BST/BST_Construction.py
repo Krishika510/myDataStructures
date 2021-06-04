@@ -75,4 +75,18 @@ class BST:
             current_node = current_node.left
         return current_node.value
 
+    #Validate BST
+    def validateBST(self, root):
+        return self.validateBSTHelper(root, float("-inf"), float("inf"))
+
+    #Validate BST Helper
+    def validateBSTHelper(self, root, min, max):
+        if root is None:
+            return True
+        if root.value < min or root.value >= max:
+            return False
+        leftisValid = self.validateBSTHelper(root.left, min, root.value)
+        rightisValid = self.validateBSTHelper(root.right, root.value, max)
+        return leftisValid and rightisValid
+
 
