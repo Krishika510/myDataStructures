@@ -4,6 +4,7 @@ class BSTTraversal:
         self.left = None
         self.right = None
 
+    #Inorder Traversal
     def inOrderTraverse(self, root, array):
         if root is not None:
             self.inOrderTraverse(root.left, array)
@@ -11,6 +12,7 @@ class BSTTraversal:
             self.inOrderTraverse(root.right, array)
         return array
 
+    #Preorder Traversal
     def preOrderTraverse(self, root, array):
         if root is not None:
             array.append(root.value)
@@ -18,6 +20,7 @@ class BSTTraversal:
             self.preOrderTraverse(root.right, array)
         return array
 
+    #Postorder Traversal
     def postOrderTraverse(self, root, array):
         if root is not None:
             self.postOrderTraverse(root.left, array)
